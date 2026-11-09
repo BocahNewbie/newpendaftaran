@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERFEST 2026 - National Tech & Design Competition</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Configuration Script (Load First) -->
+    <script src="config.js"></script>
+    <script>
+        // Apply Tailwind Configuration from config.js
+        tailwind.config = APP_CONFIG.tailwindTheme;
+    </script>
+</head>
+<body class="bg-darkbg text-slate-100 font-sans antialiased selection:bg-neonCyan selection:text-black overflow-x-hidden">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-card border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="p-2 rounded-xl bg-neonCyan/10 border border-neonCyan/30 group-hover:border-neonCyan transition-colors">
+                    <i data-lucide="zap" class="w-6 h-6 text-neonCyan animate-pulse"></i>
+                </div>
+                <span id="nav-brand-title" class="text-2xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-neonCyan via-white to-neonPurple">
+                    <!-- Loaded dynamically from config.js -->
+                </span>
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#deskripsi" class="hover:text-neonCyan transition-colors">Tentang</a>
+                <a href="#pendaftaran" class="hover:text-neonCyan transition-colors">Pendaftaran</a>
+                <a href="#tujuan" class="hover:text-neonCyan transition-colors">Tujuan</a>
+                <a href="#hadiah" class="hover:text-neonCyan transition-colors">Hadiah</a>
+                <a href="#sosmed" class="hover:text-neonCyan transition-colors">Sosmed</a>
+                <a href="#sponsor" class="hover:text-neonCyan transition-colors">Sponsor</a>
+                <a href="#panitia" class="hover:text-neonCyan transition-colors">Panitia</a>
+            </nav>
+
+            <div class="hidden lg:block">
+                <a href="#pendaftaran" class="px-6 py-2.5 rounded-full font-bold text-sm bg-gradient-to-r from-neonCyan to-blue-600 text-black hover:shadow-neon-cyan transition-all duration-300 inline-block">
+                    Daftar Sekarang
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-slate-800 px-6 pt-4 pb-6 space-y-4 text-center">
+            <a href="#deskripsi" class="block py-2 text-slate-300 hover:text-neonCyan">Tentang Event</a>
+            <a href="#pendaftaran" class="block py-2 text-slate-300 hover:text-neonCyan">Pendaftaran / Phase</a>
+            <a href="#tujuan" class="block py-2 text-slate-300 hover:text-neonCyan">Tujuan Kegiatan</a>
+            <a href="#hadiah" class="block py-2 text-slate-300 hover:text-neonCyan">Hadiah & Doorprize</a>
+            <a href="#sosmed" class="block py-2 text-slate-300 hover:text-neonCyan">Media Sosial</a>
+            <a href="#sponsor" class="block py-2 text-slate-300 hover:text-neonCyan">Sponsor & Partner</a>
+            <a href="#panitia" class="block py-2 text-slate-300 hover:text-neonCyan">Pesan Panitia</a>
+            <a href="#pendaftaran" class="inline-block w-full py-3 rounded-xl font-bold text-sm bg-neonCyan text-black">Daftar Sekarang</a>
+        </div>
+    </header>
+
+    <main class="relative pt-20">
+
+        <!-- BAGIAN 1: HERO / JUDUL KEGIATAN (With Parallax Effect) -->
+        <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-grid py-12">
+            <!-- Neon Glowing Orbs (Parallax Elements) -->
+            <div id="parallax-bg-1" class="absolute top-1/4 left-10 w-96 h-96 bg-neonCyan/15 rounded-full blur-[130px] pointer-events-none"></div>
+            <div id="parallax-bg-2" class="absolute bottom-10 right-10 w-96 h-96 bg-neonPurple/15 rounded-full blur-[130px] pointer-events-none"></div>
+            <div id="parallax-bg-3" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-neonGreen/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div id="parallax-content" class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest bg-slate-900/90 text-neonCyan border border-neonCyan/40 mb-6 shadow-neon-cyan">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> Kompetisi Teknologi & Desain Nasional 2026
+                </span>
+                
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 leading-tight">
+                    INOVASI TANPA BATAS<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan via-neonPurple to-pink-500 text-glow-cyan">
+                        CYBER FUTURE
+                    </span>
+                </h1>
+                
+                <p class="text-slate-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Tunjukkan ide kreatifmu, raih penghargaan bergengsi, dan bangun jaringan industri digital terbesar di Indonesia. Pendaftaran telah dibuka!
+                </p>
+                
+                <!-- COUNTDOWN TIMER NEON -->
+                <div class="max-w-xl mx-auto mb-10 p-4 rounded-2xl glass-card border border-neonCyan/40 shadow-neon-cyan">
+                    <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-3">Sisa Waktu Pendaftaran Early Bird</div>
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                        <div class="p-2 rounded-xl bg-slate-900/90 border border-slate-800">
+                            <div id="cd-days" class="text-2xl sm:text-3xl font-black text-neonCyan">00</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Hari</div>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-900/90 border border-slate-800">
+                            <div id="cd-hours" class="text-2xl sm:text-3xl font-black text-neonCyan">00</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Jam</div>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-900/90 border border-slate-800">
+                            <div id="cd-minutes" class="text-2xl sm:text-3xl font-black text-neonCyan">00</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Menit</div>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-900/90 border border-slate-800">
+                            <div id="cd-seconds" class="text-2xl sm:text-3xl font-black text-neonCyan">00</div>
+                            <div class="text-[10px] text-slate-400 uppercase">Detik</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                    <a href="#pendaftaran" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-950 bg-neonCyan hover:bg-cyan-300 shadow-neon-cyan transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i data-lucide="rocket" class="w-5 h-5"></i> Pilih Phase Pendaftaran
+                    </a>
+                    <a href="#deskripsi" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-200 glass-card hover:border-neonPurple hover:text-neonPurple transition-all flex items-center justify-center gap-2">
+                        Pelajari Event <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Event Info Badges -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-800/80">
+                    <div class="p-4 glass-card rounded-xl">
+                        <div id="info-event-date" class="text-neonCyan font-bold text-xl sm:text-2xl">25-27 NOV</div>
+                        <div class="text-slate-400 text-xs">Pelaksanaan Event</div>
+                    </div>
+                    <div class="p-4 glass-card rounded-xl">
+                        <div id="info-event-location" class="text-neonPurple font-bold text-xl sm:text-2xl">JAKARTA</div>
+                        <div class="text-slate-400 text-xs">Hybrid / Convention</div>
+                    </div>
+                    <div class="p-4 glass-card rounded-xl">
+                        <div id="info-event-prizepool" class="text-neonGreen font-bold text-xl sm:text-2xl">Rp 75 JT+</div>
+                        <div class="text-slate-400 text-xs">Total Hadiah</div>
+                    </div>
+                    <div class="p-4 glass-card rounded-xl">
+                        <div id="info-event-target" class="text-white font-bold text-xl sm:text-2xl">1.500+</div>
+                        <div class="text-slate-400 text-xs">Target Peserta</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 2: DESKRIPSI KEGIATAN -->
+        <section id="deskripsi" class="py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-glow-purple text-neonPurple mb-4">Mengenal CYBERFEST 2026</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neonCyan to-neonPurple mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-300 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
+                    CYBERFEST 2026 adalah ajang talenta digital berskala nasional yang menggabungkan kompetisi pengembangan perangkat lunak, desain UI/UX modern, serta inovasi AI. Didesain untuk memberikan panggung utama bagi para kreator, mahasiswa, dan profesional muda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl glass-card-hover border-t-2 border-t-neonCyan">
+                    <div class="w-14 h-14 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-6">
+                        <i data-lucide="code-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Kompetisi Modern</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Tantangan nyata sesuai tren standar industri IT terbaru. Uji kemampuan coding, problem solving, dan desain sistem kamu.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl glass-card-hover border-t-2 border-t-neonPurple">
+                    <div class="w-14 h-14 rounded-xl bg-neonPurple/10 text-neonPurple flex items-center justify-center mb-6">
+                        <i data-lucide="users-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Mentoring Eksklusif</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sesi bimbingan intensif dari pakar dan praktisi senior industri teknologi terkemuka sepanjang alur kompetisi.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl glass-card-hover border-t-2 border-t-neonGreen">
+                    <div class="w-14 h-14 rounded-xl bg-neonGreen/10 text-neonGreen flex items-center justify-center mb-6">
+                        <i data-lucide="sparkle" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Akselerasi Karir</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Karya terbaik akan dipamerkan secara langsung di depan hiring manager, perusahaan sponsor, dan calon investor.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 3: MENU PENDAFTARAN / PHASE CARDS -->
+        <section id="pendaftaran" class="py-24 bg-slate-950/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-neonCyan font-mono text-sm tracking-widest uppercase">Gelombang Pendaftaran</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Pilih Phase Registrasi</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">
+                        Amankan tiket kamu sekarang sebelum kuota peserta pada setiap phase habis!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Phase 1 Card -->
+                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between glass-card-hover relative overflow-hidden border border-neonCyan/30">
+                        <div id="phase1-badge" class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-neonCyan/20 text-neonCyan border border-neonCyan/40">EARLY BIRD</div>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">Phase 1</div>
+                            <h3 id="phase1-title-display" class="text-2xl font-bold text-white mb-2">Early Bird Access</h3>
+                            <p class="text-xs text-slate-400 mb-6">Cocok untuk pendaftar awal yang ingin kuota hemat.</p>
+                            
+                            <div class="mb-4">
+                                <span id="phase1-price-display" class="text-4xl font-extrabold text-neonCyan">Rp 99.000</span>
+                            </div>
+
+                            <div id="phase1-schedule-display" class="text-[11px] text-slate-400 mb-6 flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-neonCyan"></i>
+                                <span id="phase1-schedule-text">Buka s/d 10 Nov 2026</span>
+                            </div>
+
+                            <!-- Kuota Progress Bar -->
+                            <div class="mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <div class="flex justify-between text-xs font-semibold mb-2">
+                                    <span class="text-slate-300">Sisa Kuota Slot:</span>
+                                    <span id="phase1-slot-text" class="text-neonCyan">12 Slot Tersisa</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2.5">
+                                    <div id="phase1-progress" class="bg-neonCyan h-2.5 rounded-full shadow-neon-cyan" style="width: 88%"></div>
+                                </div>
+                                <div id="phase1-detail-text" class="text-[10px] text-slate-400 mt-1.5 text-right">88% Terisi (44/50 Slot)</div>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonCyan"></i> Akses Seluruh Sesi Webinar</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonCyan"></i> E-Sertifikat Tingkat Nasional</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonCyan"></i> Starter Kit Digital</li>
+                            </ul>
+                        </div>
+
+                        <button id="btn-phase-1" onclick="triggerRegistration('p1')" class="w-full py-3.5 rounded-xl font-bold text-slate-950 bg-neonCyan hover:bg-cyan-300 shadow-neon-cyan transition-all text-center">
+                            Pilih Phase 1 & Daftar
+                        </button>
+                    </div>
+
+                    <!-- Phase 2 Card -->
+                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between glass-card-hover relative overflow-hidden border-2 border-neonPurple shadow-neon-purple scale-100 lg:-translate-y-2">
+                        <div id="phase2-badge" class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-neonPurple/30 text-neonPurple border border-neonPurple">PALING POPULER</div>
+                        <div>
+                            <div class="text-sm font-semibold text-neonPurple uppercase tracking-wider mb-2">Phase 2</div>
+                            <h3 id="phase2-title-display" class="text-2xl font-bold text-white mb-2">Regular Pass</h3>
+                            <p class="text-xs text-slate-400 mb-6">Fasilitas penuh untuk pejuang kompetisi.</p>
+                            
+                            <div class="mb-4">
+                                <span id="phase2-price-display" class="text-4xl font-extrabold text-neonPurple">Rp 175.000</span>
+                            </div>
+
+                            <div id="phase2-schedule-display" class="text-[11px] text-slate-400 mb-6 flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-neonPurple"></i>
+                                <span id="phase2-schedule-text">Buka s/d 20 Nov 2026</span>
+                            </div>
+
+                            <div class="mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <div class="flex justify-between text-xs font-semibold mb-2">
+                                    <span class="text-slate-300">Sisa Kuota Slot:</span>
+                                    <span id="phase2-slot-text" class="text-neonPurple">45 Slot Tersisa</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2.5">
+                                    <div id="phase2-progress" class="bg-neonPurple h-2.5 rounded-full shadow-neon-purple" style="width: 55%"></div>
+                                </div>
+                                <div id="phase2-detail-text" class="text-[10px] text-slate-400 mt-1.5 text-right">55% Terisi (55/100 Slot)</div>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonPurple"></i> Semua Benefit Phase 1</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonPurple"></i> Sesi Mentoring 1-on-1 Eksklusif</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonPurple"></i> Merchandise Kit Fisik</li>
+                            </ul>
+                        </div>
+
+                        <button id="btn-phase-2" onclick="triggerRegistration('p2')" class="w-full py-3.5 rounded-xl font-bold text-white bg-neonPurple hover:bg-purple-600 shadow-neon-purple transition-all text-center">
+                            Pilih Phase 2 & Daftar
+                        </button>
+                    </div>
+
+                    <!-- Phase 3 Card -->
+                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between glass-card-hover relative overflow-hidden border border-neonGreen/30">
+                        <div id="phase3-badge" class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-neonGreen/20 text-neonGreen border border-neonGreen/40">VIP ACCESS</div>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">Phase 3</div>
+                            <h3 id="phase3-title-display" class="text-2xl font-bold text-white mb-2">VIP & Final On-Spot</h3>
+                            <p class="text-xs text-slate-400 mb-6">Akses prioritas penuh dan Networking Dinner.</p>
+                            
+                            <div class="mb-4">
+                                <span id="phase3-price-display" class="text-4xl font-extrabold text-neonGreen">Rp 299.000</span>
+                            </div>
+
+                            <div id="phase3-schedule-display" class="text-[11px] text-slate-400 mb-6 flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-neonGreen"></i>
+                                <span id="phase3-schedule-text">Buka s/d 25 Nov 2026</span>
+                            </div>
+
+                            <div class="mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <div class="flex justify-between text-xs font-semibold mb-2">
+                                    <span class="text-slate-300">Sisa Kuota Slot:</span>
+                                    <span id="phase3-slot-text" class="text-neonGreen">18 Slot Tersisa</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2.5">
+                                    <div id="phase3-progress" class="bg-neonGreen h-2.5 rounded-full shadow-neon-green" style="width: 40%"></div>
+                                </div>
+                                <div id="phase3-detail-text" class="text-[10px] text-slate-400 mt-1.5 text-right">40% Terisi (12/30 Slot)</div>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonGreen"></i> Semua Fasilitas Phase 1 & 2</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonGreen"></i> VIP Gala Dinner & Networking</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-neonGreen"></i> Front-row Seat Event Grand Final</li>
+                            </ul>
+                        </div>
+
+                        <button id="btn-phase-3" onclick="triggerRegistration('p3')" class="w-full py-3.5 rounded-xl font-bold text-slate-950 bg-neonGreen hover:bg-emerald-400 shadow-neon-green transition-all text-center">
+                            Pilih Phase 3 & Daftar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 4: TUJUAN KEGIATAN -->
+        <section id="tujuan" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Tujuan Utama Event</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Kami bertekad menciptakan dampak nyata bagi kemajuan ekosistem digital Indonesia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-xl border border-slate-800 hover:border-neonCyan transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-4"><i data-lucide="target" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Wadah Ekspresi</h3>
+                    <p class="text-slate-400 text-sm">Menyediakan sarana bagi inovator muda untuk memamerkan proyek digital terbaik mereka.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-slate-800 hover:border-neonPurple transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-neonPurple/10 text-neonPurple flex items-center justify-center mb-4"><i data-lucide="cpu" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Peningkatan Skill</h3>
+                    <p class="text-slate-400 text-sm">Mendorong peningkatan standar kompetensi teknis peserta sesuai kebutuhan dunia kerja.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-slate-800 hover:border-neonGreen transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-neonGreen/10 text-neonGreen flex items-center justify-center mb-4"><i data-lucide="network" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Koneksi Industri</h3>
+                    <p class="text-slate-400 text-sm">Mempertemukan talent berkualitas dengan perusahaan teknologi ternama nasional.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-slate-800 hover:border-pink-500 transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4"><i data-lucide="lightbulb" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Solusi Nyata</h3>
+                    <p class="text-slate-400 text-sm">Menghasilkan inovasi produk yang dapat menyelesaikan permasalahan riil masyarakat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 5: HADIAH KEGIATAN -->
+        <section id="hadiah" class="py-24 bg-slate-950/40 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-neonGreen font-mono text-sm tracking-widest uppercase">Reward & Prize Pool</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-glow-green text-neonGreen mt-2 mb-4">Total Hadiah Rp 75.000.000</h2>
+                    <p class="text-slate-300 max-w-2xl mx-auto">Rebut piala bergengsi, uang tunai, serta berbagai doorprize menarik!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Juara 2 -->
+                    <div class="glass-card p-8 rounded-2xl text-center glass-card-hover border-t-4 border-t-slate-400 order-2 md:order-1">
+                        <div class="w-20 h-20 rounded-full bg-slate-400/10 text-slate-300 flex items-center justify-center mx-auto mb-4 border border-slate-400/30"><i data-lucide="medal" class="w-10 h-10"></i></div>
+                        <h3 class="text-xl font-bold text-slate-300">Juara 2 (Runner Up)</h3>
+                        <div class="text-3xl font-extrabold text-white my-3">Rp 20.000.000</div>
+                        <p class="text-xs text-slate-400 mb-4">+ Trophy, E-Certificate, Merchandise Package</p>
+                    </div>
+
+                    <!-- Juara 1 -->
+                    <div class="glass-card p-8 rounded-2xl text-center glass-card-hover border-t-4 border-t-neonCyan shadow-neon-cyan order-1 md:order-2 scale-105">
+                        <div class="w-24 h-24 rounded-full bg-neonCyan/20 text-neonCyan flex items-center justify-center mx-auto mb-4 border border-neonCyan"><i data-lucide="trophy" class="w-12 h-12"></i></div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-neonCyan text-slate-950 uppercase">Juara Utama</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Juara 1 (Champion)</h3>
+                        <div class="text-4xl font-black text-neonCyan my-3">Rp 35.000.000</div>
+                        <p class="text-xs text-slate-300 mb-4">+ Gold Trophy, Incubator Access, E-Certificate</p>
+                    </div>
+
+                    <!-- Juara 3 -->
+                    <div class="glass-card p-8 rounded-2xl text-center glass-card-hover border-t-4 border-t-amber-600 order-3">
+                        <div class="w-20 h-20 rounded-full bg-amber-600/10 text-amber-500 flex items-center justify-center mx-auto mb-4 border border-amber-600/30"><i data-lucide="award" class="w-10 h-10"></i></div>
+                        <h3 class="text-xl font-bold text-slate-300">Juara 3</h3>
+                        <div class="text-3xl font-extrabold text-white my-3">Rp 10.000.000</div>
+                        <p class="text-xs text-slate-400 mb-4">+ Trophy, E-Certificate, Merchandise Package</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION (Pusat Informasi Accordion) -->
+        <section class="py-20 max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-neonCyan font-mono text-xs uppercase tracking-widest">Pusat Informasi</span>
+                <h2 class="text-3xl font-extrabold text-white mt-1">Pertanyaan Umum (FAQ)</h2>
+            </div>
+            
+            <div id="faq-container" class="space-y-4">
+                <!-- Dynamically Rendered from config.js -->
+            </div>
+        </section>
+
+        <!-- BAGIAN 6: SOSIAL MEDIA & KOMUNITAS -->
+        <section id="sosmed" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Bergabung dengan Komunitas</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Ikuti saluran komunikasi resmi kami untuk info pendaftaran & pengumuman terbaru.</p>
+            </div>
+
+            <div id="sosmed-container" class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Dynamically Rendered from config.js -->
+            </div>
+        </section>
+
+        <!-- BAGIAN 7: SPONSOR & PARTNER -->
+        <section id="sponsor" class="py-20 bg-slate-950/70 border-y border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-slate-400 text-xs uppercase tracking-widest font-semibold">Didukung oleh Perusahaan Teknologi Ternama</span>
+                
+                <div id="sponsor-container" class="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70">
+                    <!-- Dynamically Rendered from config.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 8: UCAPAN TERIMA KASIH DARI PANITIA -->
+        <section id="panitia" class="py-24 max-w-5xl mx-auto px-4 text-center">
+            <div class="glass-card p-10 sm:p-14 rounded-3xl border border-neonPurple/30 relative overflow-hidden">
+                <div class="w-16 h-16 rounded-full bg-neonPurple/20 text-neonPurple flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="heart" class="w-8 h-8 fill-neonPurple"></i>
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-bold text-white mb-6">Pesan dari Panitia Penyelenggara</h2>
+                <p id="panitia-message" class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto italic mb-8">
+                    <!-- Loaded dynamically from config.js -->
+                </p>
+                <div id="panitia-signature" class="text-neonCyan font-bold tracking-wider uppercase text-sm">
+                    <!-- Loaded dynamically from config.js -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-card border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Teks Brand/Judul pada Footer berfungsi sebagai Hidden Trigger Login Admin -->
+                <div onclick="openAdminLoginModal()" class="flex items-center space-x-3 cursor-pointer group selection:bg-none" title="Admin Access">
+                    <i data-lucide="zap" class="w-6 h-6 text-neonCyan group-hover:animate-bounce"></i>
+                    <span id="footer-brand-title" class="text-xl font-bold text-white tracking-wide group-hover:text-neonCyan transition-colors">
+                        CYBERFEST 2026
+                    </span>
+                </div>
+
+                <div class="flex items-center space-x-6 text-sm text-slate-400">
+                    <a href="#deskripsi" class="hover:text-neonCyan transition-colors">Tentang</a>
+                    <a href="#pendaftaran" class="hover:text-neonCyan transition-colors">Tiket</a>
+                    <a href="#tujuan" class="hover:text-neonCyan transition-colors">Tujuan</a>
+                    <a href="#sosmed" class="hover:text-neonCyan transition-colors">Sosmed</a>
+                </div>
+
+                <div id="footer-copyright" class="text-slate-500 text-xs text-center md:text-right">
+                    © 2026 CYBERFEST. All rights reserved.<br>
+                    <span class="text-slate-400">Designed with Neon Glow & Parallax Effect</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: FORM PENDAFTARAN -->
+    <div id="register-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/80 backdrop-blur-md p-4">
+        <div class="glass-card w-full max-w-lg rounded-2xl p-6 sm:p-8 border border-neonCyan relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeRegisterModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="mb-6">
+                <span id="modal-phase-tag" class="px-3 py-1 rounded-full text-xs font-bold bg-neonCyan/20 text-neonCyan border border-neonCyan/40">Phase Selected</span>
+                <h3 class="text-2xl font-bold text-white mt-3">Formulir Pendaftaran</h3>
+                <p class="text-slate-400 text-xs mt-1">Lengkapi data diri kamu di bawah ini untuk mengamankan slot.</p>
+            </div>
+
+            <form id="registration-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap *</label>
+                    <input type="text" id="reg-name" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-neonCyan transition-colors text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Alamat Email *</label>
+                    <input type="email" id="reg-email" required placeholder="budi@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-neonCyan transition-colors text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp *</label>
+                    <input type="tel" id="reg-phone" required placeholder="081234567890" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-neonCyan transition-colors text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Kategori Lomba</label>
+                    <select id="reg-category" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-neonCyan transition-colors text-sm">
+                        <!-- Filled dynamically -->
+                    </select>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-slate-950 bg-neonCyan hover:bg-cyan-300 shadow-neon-cyan transition-all text-center">
+                        Lanjut ke Pembayaran & QR Code
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: METODE PEMBAYARAN & QR CODE -->
+    <div id="payment-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/85 backdrop-blur-md p-4">
+        <div class="glass-card w-full max-w-md rounded-2xl p-6 sm:p-8 border border-neonCyan relative text-center">
+            <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="w-12 h-12 rounded-full bg-neonCyan/20 text-neonCyan flex items-center justify-center mx-auto mb-3 border border-neonCyan/40">
+                <i data-lucide="qr-code" class="w-6 h-6"></i>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white">Instruksi Pembayaran QRIS</h3>
+            <p class="text-xs text-slate-400 mt-1">Scan QR Code unik di bawah ini menggunakan aplikasi e-Wallet atau Banking kamu.</p>
+
+            <div class="my-5 p-4 rounded-xl bg-white/95 text-slate-900 border-2 border-neonCyan">
+                <div id="qr-code-container" class="flex justify-center mb-3">
+                    <img id="qr-code-img" src="" alt="QR Code Unik Pembayaran" class="w-44 h-44 rounded-lg">
+                </div>
+                <div class="text-xs font-mono font-bold text-slate-800">
+                    NO. REGISTRASI: <span id="pay-regno" class="text-neonPurple font-extrabold">#000</span>
+                </div>
+                <div id="pay-amount" class="text-lg font-black text-slate-900 mt-1">Rp 0</div>
+                <div class="text-[10px] text-slate-500">Bank Transfer / QRIS Virtual Account</div>
+            </div>
+
+            <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 text-left text-xs space-y-1 mb-5">
+                <div class="text-slate-400">Status Pembayaran: <span class="text-amber-400 font-bold">MENUNGGU VERIFIKASI</span></div>
+                <div class="text-slate-400">Email Kirim: <span id="pay-email-target" class="text-slate-200"></span></div>
+            </div>
+
+            <div class="space-y-3">
+                <button id="btn-wa-confirm" onclick="openWhatsAppConfirmation()" class="w-full py-3 rounded-xl font-bold text-slate-950 bg-neonGreen hover:bg-emerald-400 shadow-neon-green transition-all flex items-center justify-center gap-2 text-sm">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> Konfirmasi Pembayaran via WA
+                </button>
+                <button onclick="closePaymentModal()" class="w-full py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white text-xs">
+                    Tutup & Cek Email Nanti
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: VIEW OFFICIAL E-TICKET (z-[60] Above Admin Overlay) -->
+    <div id="eticket-modal" class="fixed inset-0 z-[60] flex items-center justify-center hidden bg-black/90 backdrop-blur-md p-4">
+        <div class="glass-card w-full max-w-lg rounded-2xl p-6 sm:p-8 border border-neonGreen relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeEticketModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-neonGreen/20 text-neonGreen border border-neonGreen/50 uppercase">OFFICIAL E-TICKET VERIFIED</span>
+                <h3 class="text-2xl font-extrabold text-white mt-2">CYBERFEST 2026</h3>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-neonGreen/60 relative overflow-hidden shadow-neon-green">
+                <div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-4">
+                    <div>
+                        <div class="text-[10px] text-slate-400 uppercase tracking-widest">No. Registrasi</div>
+                        <div id="eticket-regno" class="text-xl font-mono font-black text-neonGreen">#001</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-[10px] text-slate-400 uppercase tracking-widest">Tanggal Event</div>
+                        <div class="text-xs font-bold text-white">25-27 NOV 2026</div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-6 text-sm">
+                    <div>
+                        <div class="text-[10px] text-slate-400 uppercase">Nama Peserta</div>
+                        <div id="eticket-name" class="font-bold text-white text-lg">Budi Santoso</div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <div class="text-[10px] text-slate-400 uppercase">Phase Registrasi</div>
+                            <div id="eticket-phase" class="font-semibold text-neonCyan">Early Bird Access</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-slate-400 uppercase">Kategori Lomba</div>
+                            <div id="eticket-category" class="font-semibold text-slate-200">Web Development</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <div>
+                        <div class="text-[10px] text-slate-400">Lokasi Event</div>
+                        <div class="text-xs font-semibold text-slate-300">Jakarta Convention Center</div>
+                    </div>
+                    <img id="eticket-qr" src="" alt="QR Access" class="w-20 h-20 bg-white p-1 rounded-lg">
+                </div>
+            </div>
+
+            <div class="mt-6 flex items-center gap-3">
+                <button onclick="window.print()" class="w-full py-3 rounded-xl font-bold text-slate-950 bg-neonCyan hover:bg-cyan-300 transition-all flex items-center justify-center gap-2 text-sm">
+                    <i data-lucide="printer" class="w-4 h-4"></i> Cetak / Simpan PDF E-Ticket
+                </button>
+                <button onclick="closeEticketModal()" class="px-5 py-3 rounded-xl font-bold text-slate-300 glass-card hover:bg-slate-800 text-sm">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: ADMIN LOGIN AUTHENTICATION -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/80 backdrop-blur-md p-4">
+        <div class="glass-card w-full max-w-md rounded-2xl p-6 sm:p-8 border border-neonPurple relative">
+            <button onclick="closeAdminLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-xl bg-neonPurple/20 text-neonPurple flex items-center justify-center mx-auto mb-3 border border-neonPurple/40">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Admin Authentication</h3>
+                <p class="text-slate-400 text-xs mt-1">Masukan kredensial admin untuk mengelola peserta & slot.</p>
+            </div>
+
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Username</label>
+                    <input type="text" id="admin-user" required placeholder="admin" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-neonPurple transition-colors text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password</label>
+                    <input type="password" id="admin-pass" required placeholder="••••••••" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-neonPurple transition-colors text-sm">
+                </div>
+                <div id="admin-error-msg" class="hidden text-red-400 text-xs font-semibold text-center py-1">
+                    Username atau password salah!
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-white bg-neonPurple hover:bg-purple-600 shadow-neon-purple transition-all text-center">
+                        Masuk Dashboard Admin
+                    </button>
+                </div>
+            </form>
+            <div class="mt-4 text-center">
+                <span class="text-[11px] text-slate-500">Default: Username <code class="text-slate-400">admin</code> | Pass <code class="text-slate-400">cyber2026</code></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5: DASHBOARD ADMIN MANAGEMENT -->
+    <div id="admin-dashboard-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/90 backdrop-blur-lg p-2 sm:p-6 overflow-y-auto">
+        <div class="glass-card w-full max-w-6xl rounded-2xl p-4 sm:p-8 border border-neonCyan relative my-auto max-h-[92vh] flex flex-col">
+            <!-- Header Dashboard -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-neonCyan/20 text-neonCyan border border-neonCyan/40">
+                        <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Admin Management Dashboard</h3>
+                        <p class="text-xs text-slate-400">Kelola kuota peserta, verifikasi pembayaran, & unduh laporan.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="downloadCSV()" class="px-4 py-2 rounded-xl bg-neonGreen/20 text-neonGreen hover:bg-neonGreen hover:text-black font-bold text-xs border border-neonGreen/40 transition-all flex items-center gap-1.5">
+                        <i data-lucide="download" class="w-4 h-4"></i> Export CSV / Excel
+                    </button>
+                    <button onclick="closeAdminDashboard()" class="p-2 text-slate-400 hover:text-white rounded-xl bg-slate-900">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-y-auto space-y-8 py-6 pr-1">
+                <!-- PANEL 1: EDIT PHASE & SLOTS -->
+                <div>
+                    <h4 class="text-sm font-bold text-neonCyan uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <i data-lucide="sliders" class="w-4 h-4"></i> Pengaturan Lengkap Phase, Slot, Harga & Jadwal
+                    </h4>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Edit Slot Phase 1 -->
+                        <div class="p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3">
+                            <div class="flex justify-between items-center pb-2 border-b border-slate-800">
+                                <span class="font-bold text-neonCyan text-sm">Phase 1</span>
+                                <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                                    <span>Status Open:</span>
+                                    <input type="checkbox" id="edit-p1-open" onchange="updatePhaseSlotsFromAdmin()" class="accent-neonCyan w-4 h-4">
+                                </label>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div>
+                                    <label class="text-slate-400 block mb-1">Nama Phase</label>
+                                    <input type="text" id="edit-p1-name" oninput="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-medium">
+                                </div>
+                                <div>
+                                    <label class="text-slate-400 block mb-1">Harga Tiket</label>
+                                    <input type="text" id="edit-p1-price" oninput="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-medium">
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Slot Terisi</label>
+                                        <input type="number" id="edit-p1-filled" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Total Kuota</label>
+                                        <input type="number" id="edit-p1-total" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Buka Pendaftaran</label>
+                                        <input type="datetime-local" id="edit-p1-start" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-[11px]">
+                                    </div>
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Tutup Pendaftaran</label>
+                                        <input type="datetime-local" id="edit-p1-end" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-[11px]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Slot Phase 2 -->
+                        <div class="p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3">
+                            <div class="flex justify-between items-center pb-2 border-b border-slate-800">
+                                <span class="font-bold text-neonPurple text-sm">Phase 2</span>
+                                <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                                    <span>Status Open:</span>
+                                    <input type="checkbox" id="edit-p2-open" onchange="updatePhaseSlotsFromAdmin()" class="accent-neonPurple w-4 h-4">
+                                </label>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div>
+                                    <label class="text-slate-400 block mb-1">Nama Phase</label>
+                                    <input type="text" id="edit-p2-name" oninput="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-medium">
+                                </div>
+                                <div>
+                                    <label class="text-slate-400 block mb-1">Harga Tiket</label>
+                                    <input type="text" id="edit-p2-price" oninput="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-medium">
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Slot Terisi</label>
+                                        <input type="number" id="edit-p2-filled" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Total Kuota</label>
+                                        <input type="number" id="edit-p2-total" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Buka Pendaftaran</label>
+                                        <input type="datetime-local" id="edit-p2-start" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-[11px]">
+                                    </div>
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Tutup Pendaftaran</label>
+                                        <input type="datetime-local" id="edit-p2-end" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-[11px]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Slot Phase 3 -->
+                        <div class="p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3">
+                            <div class="flex justify-between items-center pb-2 border-b border-slate-800">
+                                <span class="font-bold text-neonGreen text-sm">Phase 3</span>
+                                <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                                    <span>Status Open:</span>
+                                    <input type="checkbox" id="edit-p3-open" onchange="updatePhaseSlotsFromAdmin()" class="accent-neonGreen w-4 h-4">
+                                </label>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div>
+                                    <label class="text-slate-400 block mb-1">Nama Phase</label>
+                                    <input type="text" id="edit-p3-name" oninput="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-medium">
+                                </div>
+                                <div>
+                                    <label class="text-slate-400 block mb-1">Harga Tiket</label>
+                                    <input type="text" id="edit-p3-price" oninput="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-medium">
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Slot Terisi</label>
+                                        <input type="number" id="edit-p3-filled" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Total Kuota</label>
+                                        <input type="number" id="edit-p3-total" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Buka Pendaftaran</label>
+                                        <input type="datetime-local" id="edit-p3-start" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-[11px]">
+                                    </div>
+                                    <div>
+                                        <label class="text-slate-400 block mb-1">Tutup Pendaftaran</label>
+                                        <input type="datetime-local" id="edit-p3-end" onchange="updatePhaseSlotsFromAdmin()" class="w-full p-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-[11px]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 2: TABEL PESERTA 2 TAB -->
+                <div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-2 p-1 rounded-xl bg-slate-900 border border-slate-800">
+                            <button id="tab-btn-pending" onclick="switchAdminTab('pending')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-neonCyan text-slate-950 shadow-neon-cyan flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3.5 h-3.5"></i> Antrian Pembayaran (<span id="cnt-pending">0</span>)
+                            </button>
+                            <button id="tab-btn-approved" onclick="switchAdminTab('approved')" class="px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Peserta Terdaftar (<span id="cnt-approved">0</span>)
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-2 w-full sm:w-auto">
+                            <input type="text" id="search-registrant" onkeyup="renderRegistrantsTable()" placeholder="Cari nama, email, no. urut..." class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-neonPurple w-full sm:w-64">
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-xl border border-slate-800">
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead class="bg-slate-900 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800 select-none">
+                                <tr>
+                                    <th class="p-3 cursor-pointer hover:text-neonCyan" onclick="sortByHeader('regNo')">
+                                        <div class="flex items-center gap-1">No. Urut <span id="sort-icon-regNo">↕</span></div>
+                                    </th>
+                                    <th class="p-3 cursor-pointer hover:text-neonCyan" onclick="sortByHeader('name')">
+                                        <div class="flex items-center gap-1">Nama <span id="sort-icon-name">↕</span></div>
+                                    </th>
+                                    <th class="p-3 cursor-pointer hover:text-neonCyan" onclick="sortByHeader('email')">
+                                        <div class="flex items-center gap-1">Email <span id="sort-icon-email">↕</span></div>
+                                    </th>
+                                    <th class="p-3">WhatsApp</th>
+                                    <th class="p-3 cursor-pointer hover:text-neonCyan" onclick="sortByHeader('phase')">
+                                        <div class="flex items-center gap-1">Phase Target <span id="sort-icon-phase">↕</span></div>
+                                    </th>
+                                    <th class="p-3 cursor-pointer hover:text-neonCyan" onclick="sortByHeader('category')">
+                                        <div class="flex items-center gap-1">Kategori Lomba <span id="sort-icon-category">↕</span></div>
+                                    </th>
+                                    <th class="p-3 cursor-pointer hover:text-neonCyan" onclick="sortByHeader('date')">
+                                        <div class="flex items-center gap-1">Tanggal <span id="sort-icon-date">↕</span></div>
+                                    </th>
+                                    <th class="p-3 text-center">Status / Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="registrants-table-body" class="divide-y divide-slate-800/60 bg-slate-950/50">
+                                <!-- Dynamic Rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFIKASI TOAST CUSTOM -->
+    <div id="success-toast" class="fixed bottom-6 right-6 z-50 hidden glass-card border border-neonGreen p-4 rounded-xl shadow-neon-green flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-neonGreen/20 text-neonGreen flex items-center justify-center">
+            <i data-lucide="check" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <h5 id="toast-title" class="text-sm font-bold text-white">Berhasil!</h5>
+            <p id="toast-desc" class="text-xs text-slate-300">Email instruksi pembayaran & QR Code telah dikirim.</p>
+        </div>
+    </div>
+
+    <!-- External JavaScript Core Modules -->
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
+
+    <!-- Init script -->
+    <script>
+        // Init Lucide icons & load elements from Config
+        document.addEventListener("DOMContentLoaded", () => {
+            initAppFromConfig();
+            if (window.lucide && typeof lucide.createIcons === 'function') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
